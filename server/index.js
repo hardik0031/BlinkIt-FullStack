@@ -16,7 +16,6 @@ import productRouter from './route/product.route.js';
 import cartRouter from './route/cart.route.js';
 import addressRouter from './route/address.route.js';
 import orderRouter from './route/order.route.js';
-
 import { webhookStripe } from './controllers/order.controller.js';
 import bodyParser from 'body-parser';
 
@@ -39,7 +38,7 @@ app.use(helmet({
 
 // Routes
 app.get("/", (req, res) => {
-    res.json({ message: "Server is running " + PORT });
+    res.json({ message: "Server is running on port " + (process.env.PORT || 8080) });
 });
 app.use('/api/user', userRouter);
 app.use('/api/category', categoryRouter);
@@ -52,6 +51,7 @@ app.use('/api/order', orderRouter);
 
 const PORT = process.env.PORT || 8080;
 
+// Connect to the database and start the server
 connectDB().then(() => {
     app.listen(PORT, () => {
         console.log("Server is running on port", PORT);
