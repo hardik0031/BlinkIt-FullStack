@@ -1,22 +1,16 @@
 {
-    "version": 2,
-    "name": "BlinkitClone",
-    "builds": [
-      {
-        "src": "index.js",
-        "use": "@vercel/node"
-      }
+    "version" : 2,
+    "name" : "BlinkitClone",
+    "builds" : [
+        {
+            "src" : "./index.js",
+            "use" : "@vercel/node"
+        }
     ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.js"
-      }
-    ],
-    "env": {
-      "SECRET_KEY_REFRESH_TOKEN": "fagfsgsffrrt",
-      "FRONTEND_URL": "http://localhost:8080",
-      "MONGODB_URI": "mongodb+srv://panchalhardik003:123456987@blinkit.quxso.mongodb.net/?retryWrites=true&w=majority&appName=BlinkIt"
-    }
-  }
-  
+    "routes" : [
+        {
+            "src" : "/(.*)",
+            "dest" : "/"
+        }
+    ]
+}
